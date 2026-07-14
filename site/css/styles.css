@@ -397,7 +397,7 @@ a.ccard:hover { transform: translate(-2px, -2px); box-shadow: 6px 6px 0 rgba(14,
   padding-top: 36px; padding-bottom: 32px;
 }
 .footer__logo { display: inline-block; flex: none; }
-.footer__logo img { width: 88px; height: auto; }
+.footer__logo img { width: 72px; height: auto; }
 .footer__nav { display: flex; flex-wrap: wrap; gap: 12px 32px; }
 .footer__nav a { font-family: var(--font-display); font-weight: 600; font-size: 15px; color: #C7D1EC; }
 .footer__nav a:hover { color: #fff; }
