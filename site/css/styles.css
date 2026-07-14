@@ -33,27 +33,6 @@
   --container: 1180px;
 }
 
-[data-theme="dark"] {
-  --navy-100: #2B3768;
-  --navy-50:  #17214A;
-  --ink:      #E6EBF9;
-  --muted:    #9AA8CE;
-  --line:     #243059;
-  --tint:     #0D1534;
-
-  --bg:       #0B1228;
-  --surface:  #111B3E;
-  --heading:  #EEF2FE;
-  --nav-bg:   rgba(11, 18, 40, 0.94);
-  color-scheme: dark;
-
-  --shadow-hard: 10px 10px 0 rgba(0, 0, 0, 0.35);
-}
-
-.only-dark { display: none !important; }
-[data-theme="dark"] .only-dark { display: revert !important; }
-[data-theme="dark"] .only-light { display: none !important; }
-
 /* ---------- reset ---------- */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
@@ -63,7 +42,6 @@ body {
   background: var(--bg);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
-  transition: background-color 0.25s ease, color 0.25s ease;
 }
 img { display: block; max-width: 100%; }
 a { color: inherit; text-decoration: none; }
@@ -143,20 +121,7 @@ h3 { font-size: 20px; font-weight: 700; color: var(--heading); }
 }
 .nav__links > a:not(.btn):hover::after { width: 100%; }
 
-.nav__right { display: flex; align-items: center; gap: 12px; margin-left: 22px; }
-
-.theme-toggle {
-  display: grid; place-items: center; width: 38px; height: 38px;
-  border: 1.5px solid var(--line); color: var(--heading);
-  transition: border-color 0.15s ease, color 0.15s ease;
-}
-.theme-toggle:hover { border-color: var(--red-600); color: var(--red-600); }
-.theme-toggle svg { width: 19px; height: 19px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; }
-.theme-toggle .icon-sun { display: none; }
-[data-theme="dark"] .theme-toggle .icon-sun { display: block; }
-[data-theme="dark"] .theme-toggle .icon-moon { display: none; }
-
-.nav__burger { display: none; flex-direction: column; gap: 5px; padding: 8px; }
+.nav__burger { display: none; flex-direction: column; gap: 5px; padding: 8px; margin-left: auto; }
 .nav__burger span { width: 26px; height: 3px; background: var(--heading); transition: 0.2s; }
 
 .mobile-menu {
@@ -215,7 +180,6 @@ h3 { font-size: 20px; font-weight: 700; color: var(--heading); }
   background: var(--navy-900); border-top: 1px solid rgba(255,255,255,0.08);
   overflow: hidden; padding: 14px 0;
 }
-[data-theme="dark"] .ticker { background: #101D4A; border-bottom: 1px solid rgba(255, 255, 255, 0.06); }
 .ticker__track {
   display: flex; align-items: center; gap: 28px; width: max-content;
   animation: ticker 36s linear infinite;
@@ -258,8 +222,6 @@ h3 { font-size: 20px; font-weight: 700; color: var(--heading); }
   background: var(--navy-50); border: 1.5px solid var(--navy-100);
 }
 .service__icon svg { width: 30px; height: 30px; fill: none; stroke: var(--navy-700); stroke-width: 2; stroke-linecap: square; }
-[data-theme="dark"] .service__icon svg { stroke: #A9B8E8; }
-[data-theme="dark"] .service--flag { border-color: #4A5CA5; }
 .service h3 { margin-bottom: 10px; }
 .service p { font-size: 15.5px; color: var(--muted); }
 .service__badge {
@@ -275,7 +237,6 @@ h3 { font-size: 20px; font-weight: 700; color: var(--heading); }
   background: var(--navy-900); color: #fff; position: relative; overflow: hidden;
   padding: 110px 0;
 }
-[data-theme="dark"] .partm { background: #101D4A; }
 .partm::before {
   /* faint oversized bar motif in the background */
   content: ""; position: absolute; right: -60px; bottom: -40px; width: 520px; height: 380px;
@@ -315,7 +276,6 @@ h3 { font-size: 20px; font-weight: 700; color: var(--heading); }
   transition: 0.15s ease;
 }
 .chip:hover { border-color: var(--navy-700); }
-[data-theme="dark"] .chip:hover { border-color: #7C8FD0; }
 .chip.is-active { background: var(--navy-700); border-color: var(--navy-700); color: #fff; }
 
 .projects__grid {
@@ -404,7 +364,6 @@ a.ccard:hover { transform: translate(-2px, -2px); box-shadow: 6px 6px 0 rgba(14,
   background: var(--navy-900); padding: 38px 34px;
   box-shadow: var(--shadow-hard);
 }
-[data-theme="dark"] .contact__form { background: #101D4A; }
 .field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
 .field { display: block; margin-bottom: 16px; }
 .field span {
@@ -495,7 +454,6 @@ a.ccard:hover { transform: translate(-2px, -2px); box-shadow: 6px 6px 0 rgba(14,
 @media (max-width: 720px) {
   .nav__links { display: none; }
   .nav__burger { display: flex; }
-  .nav__right { margin-left: auto; }
   .nav__mark { height: 32px; }
   .nav__word { height: 25px; }
   .hero { min-height: 86vh; }

@@ -2,18 +2,6 @@
 (function () {
   'use strict';
 
-  /* ----- theme toggle ----- */
-  const root = document.documentElement;
-  const themeBtn = document.querySelector('.theme-toggle');
-  const setThemeLabel = () =>
-    themeBtn.setAttribute('aria-label', root.dataset.theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
-  themeBtn.addEventListener('click', () => {
-    root.dataset.theme = root.dataset.theme === 'dark' ? 'light' : 'dark';
-    localStorage.setItem('theme', root.dataset.theme);
-    setThemeLabel();
-  });
-  setThemeLabel();
-
   /* ----- sticky nav shadow ----- */
   const nav = document.querySelector('.nav');
   const onScroll = () => nav.classList.toggle('is-scrolled', window.scrollY > 10);
