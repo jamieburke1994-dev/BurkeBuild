@@ -1,4 +1,4 @@
-/* BurkeBuild — interactions */
+/* BurkeBuild - interactions */
 (function () {
   'use strict';
 
@@ -108,7 +108,7 @@
     e.preventDefault();
     if (!form.reportValidity()) return;
     const d = new FormData(form);
-    const subject = encodeURIComponent('Quote request — ' + d.get('type'));
+    const subject = encodeURIComponent('Quote request - ' + d.get('type'));
     const body = encodeURIComponent(
       'Name: ' + d.get('name') + '\n' +
       'Phone: ' + (d.get('phone') || '-') + '\n' +
@@ -117,7 +117,7 @@
       d.get('message')
     );
     window.location.href = 'mailto:info@burkebuild.com?subject=' + subject + '&body=' + body;
-    note.textContent = 'Your email app should now open with your enquiry — just press send.';
+    note.textContent = 'Your email app should now open with your enquiry - just press send.';
   });
 
   /* ----- footer year ----- */
