@@ -23,6 +23,13 @@
       burger.setAttribute('aria-expanded', 'false');
     })
   );
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && !menu.hidden) {
+      menu.hidden = true;
+      burger.setAttribute('aria-expanded', 'false');
+      burger.focus();
+    }
+  });
 
   /* ----- scroll reveal ----- */
   const revealEls = document.querySelectorAll('.reveal');
@@ -48,8 +55,12 @@
   const projects = document.querySelectorAll('.project');
   chips.forEach((chip) => {
     chip.addEventListener('click', () => {
-      chips.forEach((c) => c.classList.remove('is-active'));
+      chips.forEach((c) => {
+        c.classList.remove('is-active');
+        c.setAttribute('aria-pressed', 'false');
+      });
       chip.classList.add('is-active');
+      chip.setAttribute('aria-pressed', 'true');
       const f = chip.dataset.filter;
       projects.forEach((p) => {
         p.classList.toggle('is-hidden', f !== 'all' && p.dataset.cat !== f);
