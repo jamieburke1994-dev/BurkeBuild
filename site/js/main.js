@@ -61,7 +61,9 @@
   const lightbox = document.getElementById('lightbox');
   const lbImg = lightbox.querySelector('img');
   const lbCap = lightbox.querySelector('figcaption');
+  const lbButtons = lightbox.querySelectorAll('button');
   let current = 0;
+  let lastFocused = null;
 
   const visibleProjects = () =>
     Array.from(projects).filter((p) => !p.classList.contains('is-hidden'));
@@ -73,6 +75,7 @@
     lbImg.src = item.getAttribute('href');
     lbImg.alt = item.querySelector('img').alt;
     lbCap.textContent = item.querySelector('strong').textContent;
+    if (lightbox.hidden) lastFocused = document.activeElement;
     lightbox.hidden = false;
     document.body.style.overflow = 'hidden';
     lightbox.querySelector('.lightbox__close').focus();
@@ -80,6 +83,7 @@
   function closeLightbox() {
     lightbox.hidden = true;
     document.body.style.overflow = '';
+    if (lastFocused) lastFocused.focus();
   }
 
   projects.forEach((p) => {
@@ -99,6 +103,17 @@
     if (e.key === 'Escape') closeLightbox();
     if (e.key === 'ArrowLeft') openLightbox(current - 1);
     if (e.key === 'ArrowRight') openLightbox(current + 1);
+    if (e.key === 'Tab') {
+      const first = lbButtons[0];
+      const last = lbButtons[lbButtons.length - 1];
+      if (e.shiftKey && document.activeElement === first) {
+        e.preventDefault();
+        last.focus();
+      } else if (!e.shiftKey && document.activeElement === last) {
+        e.preventDefault();
+        first.focus();
+      }
+    }
   });
 
   /* ----- contact form (mailto handoff) ----- */
