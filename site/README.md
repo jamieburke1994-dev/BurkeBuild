@@ -19,6 +19,21 @@ Also worth reviewing:
   wording is accurate for the business.
 - Project titles/categories in the gallery are my best read of the photos -
   rename to the real jobs.
+- **WhatsApp**: the contact section links to wa.me/353868436710 - confirm the
+  086 number actually has WhatsApp, otherwise delete that contact card.
+- **Case studies** (`projects/*.html`): the copy describes what's visible in
+  the photos. Review it, and add real details (location, timeframe, more
+  photos) when available.
+- **Credentials**: if BurkeBuild has CIF membership, named insurance cover or
+  certs, they should be added to the About section - kept generic for now.
+
+## Before/after slider
+
+A drag-to-compare slider component is built in (`.ba` styles in the CSS,
+auto-wired in `js/main.js`). A ready-made commented-out example sits in
+`projects/part-m-home-adaptation.html` - to use it: drop a "before" photo
+into `assets/` (e.g. `partm-ramp-before.jpg`), uncomment the block, point
+the two `<img>` tags at the before/after files. Works anywhere on any page.
 
 ## Structure
 
