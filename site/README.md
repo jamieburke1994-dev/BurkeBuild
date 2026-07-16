@@ -19,8 +19,11 @@ Also worth reviewing:
   wording is accurate for the business.
 - Project titles/categories in the gallery are my best read of the photos -
   rename to the real jobs.
-- **WhatsApp**: the contact section links to wa.me/353868436710 - confirm the
-  086 number actually has WhatsApp, otherwise delete that contact card.
+- **WhatsApp**: the contact section and footer link to wa.me/353868436710 -
+  confirm the 086 number actually has WhatsApp, otherwise remove those links.
+- **Facebook / LinkedIn**: icon buttons are ready in the `index.html` footer,
+  commented out with `YOUR-PAGE` placeholder URLs - paste the real page
+  addresses and uncomment (the case-study pages can get the same block).
 - **Case studies** (`projects/*.html`): the copy describes what's visible in
   the photos. Review it, and add real details (location, timeframe, more
   photos) when available.
