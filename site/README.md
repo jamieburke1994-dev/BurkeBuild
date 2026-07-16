@@ -7,9 +7,10 @@ To preview locally: `npx serve site` from the project root, or just open `index.
 
 ## Contact details
 
-Real details (mobile 086 843 6710, office 051 572 101, info@burkebuild.com,
-Waterford / South-East) are in place, taken from the previous burkebuild.com site -
-double-check they're still current.
+Real details (mobile 086 843 6710, info@burkebuild.com, Waterford / South-East)
+are in place, taken from the previous burkebuild.com site - double-check
+they're still current. (The old site also listed a 051 572 101 landline;
+removed at Jamie's request.)
 
 Also worth reviewing:
 - The contact form opens the visitor's email app (mailto). For a proper inbox
