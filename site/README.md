@@ -1,47 +1,46 @@
-# BurkeBuild.com - website
+# BurkeBuild.com - website (v2 design)
 
 Static site: no build step, no dependencies. Upload the contents of this `site/`
-folder to any web host (Netlify, Vercel, cPanel, GitHub Pages, etc.) and it works.
+folder to any web host and it works. Deployed via Vercel from the repo root
+(`vercel.json` points at this folder).
 
-To preview locally: `npx serve site` from the project root, or just open `index.html`.
+To preview locally: `npx serve site` from the project root.
+
+## v2 notes (July 2026)
+
+The design was rebuilt from Jamie's Claude-designed export ("Website design
+improvement.zip" at the repo root). During integration these were restored on
+top of the export: working mailto form submission, the photo lightbox, mobile
+menu accessibility (aria-expanded + Escape), clean URLs (no .html) and the
+no-em-dash copy rule.
+
+**Part M / accessibility works were removed deliberately** with this redesign -
+service card, section, case study, photos and FAQ entry are all gone. The
+Part M photos survive in git history and as originals in the repo root.
 
 ## Contact details
 
-Real details (mobile 086 843 6710, info@burkebuild.com, Waterford / South-East)
-are in place, taken from the previous burkebuild.com site - double-check
-they're still current. (The old site also listed a 051 572 101 landline;
-removed at Jamie's request.)
+Mobile (+353) 86 843 6710 and info@burkebuild.com, shown site-wide.
+The 051 landline was removed at Jamie's request.
 
-Also worth reviewing:
-- The contact form opens the visitor's email app (mailto). For a proper inbox
-  form, connect a form service (e.g. Formspree/Netlify Forms) by giving the
-  `<form>` an `action` and removing the mailto handler in `js/main.js`.
-- Claims in the copy ("fully insured", grant scheme support, etc.) - confirm
-  wording is accurate for the business.
-- Project titles/categories in the gallery are my best read of the photos -
-  rename to the real jobs.
-- **WhatsApp**: the contact section and footer link to wa.me/353868436710 -
-  confirm the 086 number actually has WhatsApp, otherwise remove those links.
-- **Facebook / LinkedIn**: icon buttons are ready in the `index.html` footer,
-  commented out with `YOUR-PAGE` placeholder URLs - paste the real page
-  addresses and uncomment (the case-study pages can get the same block).
-- **Case studies** (`projects/*.html`): the copy describes what's visible in
-  the photos. Review it, and add real details (location, timeframe, more
-  photos) when available.
-- **Credentials**: if BurkeBuild has CIF membership, named insurance cover or
-  certs, they should be added to the About section - kept generic for now.
+## Still to do (needs a human)
 
-## Before/after slider
-
-A drag-to-compare slider component is built in (`.ba` styles in the CSS,
-auto-wired in `js/main.js`). A ready-made commented-out example sits in
-`projects/part-m-home-adaptation.html` - to use it: drop a "before" photo
-into `assets/` (e.g. `partm-ramp-before.jpg`), uncomment the block, point
-the two `<img>` tags at the before/after files. Works anywhere on any page.
+- Point burkebuild.com DNS at Vercel (site currently at burkebuild.vercel.app).
+- Confirm the 086 number is on WhatsApp (contact card links to wa.me).
+- Contact form opens the visitor's email app (mailto). For a real inbox form,
+  add a Formspree/similar `action` and swap the handler in `js/main.js`.
+- Original high-res photos from the old jobs - current images are low-res
+  rips from the old Wix site.
+- Credentials (CIF membership, insurance specifics) if worth naming.
+- Case-study copy (`projects/*.html`) describes what's visible in the photos -
+  worth a fact-check.
 
 ## Structure
 
-- `index.html` - the whole site (single page)
-- `css/styles.css` - styling; brand colours are CSS variables at the top
-- `js/main.js` - mobile menu, scroll reveal, gallery filter, lightbox, form
-- `assets/` - photos in AVIF with JPEG fallbacks, logo, favicon
+- `index.html` - single-page site (hero, services track, projects, about,
+  process track, contact + form, FAQ)
+- `projects/` - two case-study pages
+- `css/styles.css`, `js/main.js` - all styling and vanilla-JS interactions
+  (tilt cards, magnetic buttons, drag tracks, filters, lightbox, form)
+- `assets/` - images (.jpg in use; matching .avif kept for a future
+  performance pass), logos, favicons

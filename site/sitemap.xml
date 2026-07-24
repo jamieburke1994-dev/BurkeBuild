@@ -1,23 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://www.burkebuild.com/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>https://www.burkebuild.com/projects/contemporary-rear-extension</loc>
-    <changefreq>yearly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.burkebuild.com/projects/double-height-kitchen-extension</loc>
-    <changefreq>yearly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.burkebuild.com/projects/part-m-home-adaptation</loc>
-    <changefreq>yearly</changefreq>
-    <priority>0.7</priority>
-  </url>
+  <url><loc>https://www.burkebuild.com/</loc><priority>1.0</priority></url>
+  <url><loc>https://www.burkebuild.com/projects/contemporary-rear-extension</loc><priority>0.8</priority></url>
+  <url><loc>https://www.burkebuild.com/projects/double-height-kitchen-extension</loc><priority>0.8</priority></url>
 </urlset>
