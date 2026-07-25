@@ -112,7 +112,8 @@ h2.sec-title .thin { font-weight: 600; color: var(--muted); }
 .hero__sub strong { color: #fff; }
 .hero__actions { display: flex; align-items: center; gap: 24px; flex-wrap: wrap; }
 .hero__rail {
-  position: absolute; right: 14px; top: 50%; transform: rotate(90deg) translateX(-50%); transform-origin: right top; z-index: 2;
+  position: absolute; right: 20px; top: 50%; transform: translateY(-50%); z-index: 2;
+  writing-mode: vertical-rl;
   font-family: var(--font-display); font-weight: 700; font-size: 11px; letter-spacing: 0.3em; text-transform: uppercase;
   color: rgba(255,255,255,0.45); white-space: nowrap;
 }
