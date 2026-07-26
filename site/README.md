@@ -35,12 +35,18 @@ The 051 landline was removed at Jamie's request.
 - Case-study copy (`projects/*.html`) describes what's visible in the photos -
   worth a fact-check.
 
-## Structure
+## Structure (multi-page since late July 2026)
 
-- `index.html` - single-page site (hero, services track, projects, about,
-  process track, contact + form, FAQ)
+- `index.html` - homepage: full-screen hero + ticker only, no scroll, no footer
+- `services.html` (/services) - service cards + how-we-work steps
+- `projects.html` (/projects) - filterable gallery + lightbox
+- `about.html` (/about) - family-business story + values
+- `faq.html` (/faq) - accordion + FAQPage schema
+- `contact.html` (/contact) - call/WhatsApp/email cards + quote form (mailto)
 - `projects/` - two case-study pages
-- `css/styles.css`, `js/main.js` - all styling and vanilla-JS interactions
-  (tilt cards, magnetic buttons, drag tracks, filters, lightbox, form)
+- `css/styles.css`, `js/main.js` - shared styling and vanilla-JS interactions
 - `assets/` - images (.jpg in use; matching .avif kept for a future
   performance pass), logos, favicons
+
+Clean URLs come from Vercel's `cleanUrls` (see /vercel.json) - link pages
+without the .html extension.
