@@ -186,8 +186,6 @@ h2.sec-title .thin { font-weight: 600; color: var(--muted); }
 .frame-photo .zoomwrap { position: relative; overflow: hidden; }
 .zoomwrap img { transition: transform .8s cubic-bezier(.22,1,.36,1), filter .4s ease; }
 .zoomwrap:hover img { transform: scale(1.05); filter: brightness(1.1) saturate(1.05); }
-.frame-photo__stamp { position: absolute; left: -20px; bottom: 32px; background: var(--navy-900); padding: 18px 20px; box-shadow: 10px 10px 0 rgba(10,19,48,0.2); }
-.frame-photo__stamp img { height: 44px; filter: brightness(0) invert(1); }
 .values { display: grid; grid-template-columns: 1fr 1fr; gap: 22px 32px; }
 .value { border-left: 3px solid var(--red-600); padding-left: 16px; }
 .value strong { display: block; font-family: var(--font-display); font-weight: 800; font-size: 16.5px; color: var(--navy-900); }
