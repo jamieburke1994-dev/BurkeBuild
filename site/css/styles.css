@@ -351,26 +351,6 @@ textarea.fld { resize: vertical; margin-bottom: 22px; }
   clip-path: polygon(0 55%, 12% 42%, 38% 65%, 88% 0, 100% 12%, 40% 100%);
 }
 
-/* ---------- process rail (sequence, not boxes) ---------- */
-.steps {
-  position: relative; display: grid; grid-template-columns: repeat(4, 1fr);
-  gap: 44px; padding-top: 46px;
-}
-.steps::before {
-  content: ""; position: absolute; top: 0; left: 0; right: 0; height: 1px;
-  background: rgba(255, 255, 255, 0.16);
-}
-.steps li { position: relative; }
-.steps li::before {
-  content: ""; position: absolute; top: -5px; left: 0;
-  width: 11px; height: 11px; background: var(--red-600);
-}
-.steps h3 {
-  font-family: var(--font-display); font-weight: 800; font-size: 21px;
-  letter-spacing: -0.01em; color: #fff; margin: 0 0 12px;
-}
-.steps p { font-size: 15.5px; line-height: 1.65; color: var(--text-dim); margin: 0; }
-
 /* ---------- FAQ page layout ---------- */
 .faq-grid { display: grid; grid-template-columns: 340px 1fr; gap: 64px; align-items: start; }
 .faq-aside { position: sticky; top: 40px; }
@@ -454,14 +434,9 @@ textarea.fld { resize: vertical; margin-bottom: 22px; }
   .srow__media img { height: 320px; }
   .faq-grid { grid-template-columns: 1fr; gap: 40px; }
   .faq-aside { position: static; }
-  .steps { grid-template-columns: 1fr 1fr; gap: 40px 44px; }
 }
 @media (max-width: 720px) {
   .srow ul { grid-template-columns: 1fr; }
   .srow__media img { height: 240px; }
   .case-cta__ghost { font-size: 84px; }
-  /* rail turns vertical */
-  .steps { grid-template-columns: 1fr; gap: 32px; padding-top: 0; padding-left: 28px; }
-  .steps::before { top: 8px; bottom: 8px; left: 5px; right: auto; width: 1px; height: auto; }
-  .steps li::before { top: 6px; left: -28px; }
 }
