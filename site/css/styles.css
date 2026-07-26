@@ -148,14 +148,9 @@ h2.sec-title .thin { font-weight: 600; color: var(--muted); }
 .tcard p { font-size: 15.5px; line-height: 1.6; margin: 0; }
 .tcard--light p { color: var(--muted); }
 .tcard--dark p { color: var(--text-dim); }
-.tcard--light h3::before {
+.tcard h3::before {
   content: ""; display: block; width: 28px; height: 3px;
   background: var(--red-600); margin-bottom: 18px;
-}
-.tcard__num {
-  display: block; font-family: var(--font-display); font-weight: 700;
-  font-size: 12.5px; letter-spacing: 0.22em; color: var(--red-600);
-  margin-bottom: 16px;
 }
 
 /* ---------- projects ---------- */
