@@ -256,7 +256,7 @@ textarea.fld { resize: vertical; margin-bottom: 22px; }
 .story h2 { font-family: var(--font-display); font-weight: 800; font-size: 34px; letter-spacing: -0.02em; color: var(--navy-900); margin: 0 0 16px; }
 .story p { font-size: 16.5px; line-height: 1.75; color: var(--muted); margin: 0 0 44px; }
 .did {
-  position: sticky; top: 32px; overflow: hidden;
+  position: relative; overflow: hidden;
   background: var(--navy-850); border: 1.5px solid var(--line-dark); color: #fff;
   padding: 42px 38px; box-shadow: 14px 14px 0 rgba(14,26,66,0.12);
   will-change: transform; transition: border-color .35s ease, background .35s ease;
@@ -303,7 +303,6 @@ textarea.fld { resize: vertical; margin-bottom: 22px; }
   .fact, .fact--first { padding: 14px 16px 14px 0; border-right: none; }
   .fact--last { margin-right: 0; }
   .facts__cta { justify-self: start; margin-top: 8px; }
-  .did { position: static; }
   .hero__ghost { font-size: 17vw; top: 140px; }
 }
 @media (max-width: 720px) {
