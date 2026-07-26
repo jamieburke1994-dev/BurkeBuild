@@ -275,7 +275,10 @@ textarea.fld { resize: vertical; margin-bottom: 22px; }
 /* ---------- footer ---------- */
 .footer { background: var(--navy-950); color: #fff; border-top: 4px solid var(--red-600); }
 .footer__main { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 32px; padding-top: 40px; padding-bottom: 22px; }
-.footer__logo img { height: 100px; display: block; }
+.footer__logo { display: flex; align-items: center; gap: 12px; }
+.footer__logo img { filter: brightness(0) invert(1); display: block; }
+.footer__logo .footer__mark { height: 40px; width: auto; }
+.footer__logo .footer__word { height: 26px; width: auto; }
 .footer__contact { display: flex; align-items: center; gap: 40px; flex-wrap: wrap; font-size: 14.5px; color: var(--text-dim); }
 .footer__contact a:hover { color: #fff; }
 .footer__base { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; padding-top: 22px; padding-bottom: 22px; border-top: 1px solid rgba(255,255,255,0.1); font-size: 13px; color: #8A97C4; }
@@ -323,7 +326,8 @@ textarea.fld { resize: vertical; margin-bottom: 22px; }
   .section { padding: 72px 0; }
   .tcard { width: 320px; }
   .case-hero__content { left: 24px; right: 24px; bottom: 44px; }
-  .footer__logo img { height: 76px; }
+  .footer__logo .footer__mark { height: 32px; }
+  .footer__logo .footer__word { height: 21px; }
 }
 
 /* ---------- service rows (editorial, alternating) ---------- */
