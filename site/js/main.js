@@ -32,7 +32,6 @@
     if (!fine) return;
     document.querySelectorAll('[data-tilt]').forEach(function (card) {
       var glow = card.querySelector('.tglow');
-      var num = card.querySelector('.tcard__num');
       var light = card.getAttribute('data-theme') === 'light';
       var c = light
         ? { border: 'rgba(200,36,46,0.55)', bg: '#fff', rb: '', rbg: '', gi: 'rgba(200,36,46,0.10)', go: 'rgba(200,36,46,0)' }
@@ -62,14 +61,12 @@
         over = true;
         card.style.borderColor = c.border; card.style.background = c.bg;
         if (glow) glow.style.opacity = '1';
-        if (num) num.style.color = '#C8242E';
         if (!raf) raf = requestAnimationFrame(tick);
       });
       card.addEventListener('mouseleave', function () {
         over = false; tx = 0; ty = 0;
         card.style.borderColor = restBorder; card.style.background = restBg;
         if (glow) glow.style.opacity = '0';
-        if (num) num.style.color = 'transparent';
       });
     });
   }
