@@ -309,9 +309,13 @@ textarea.fld { resize: vertical; margin-bottom: 22px; }
   .hero__ghost { font-size: 17vw; top: 140px; }
 }
 @media (max-width: 720px) {
-  .nav { padding: 20px 24px; }
-  .nav__links { display: none; }
-  .nav__burger { display: flex; }
+  .nav { padding: 20px 24px; gap: 12px; }
+  /* keep only the quote button from the desktop nav, beside the burger */
+  .nav__links { display: flex; margin-left: auto; }
+  .nav__links > a:not(.btn-red) { display: none; }
+  .nav__links .btn-red--nav { padding: 10px 15px; font-size: 13.5px; }
+  .nav__burger { display: flex; margin-left: 0; }
+  .mobile-menu .btn-red { display: none; }
   .hero__content { left: 24px; right: 24px; }
   .hero__rail { display: none; }
   .grid-projects { grid-template-columns: 1fr; }
