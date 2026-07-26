@@ -305,8 +305,6 @@ textarea.fld { resize: vertical; margin-bottom: 22px; }
 @media (max-width: 1020px) {
   .grid-projects { grid-template-columns: repeat(2, 1fr); }
   .grid-about, .grid-contact, .grid-story { grid-template-columns: 1fr; gap: 48px; }
-  /* stacked: put the tap-to-call tiles above the form again */
-  .grid-contact > .quote-form { order: 2; }
   .facts__grid { grid-template-columns: 1fr 1fr; padding: 12px max(24px, calc((100vw - 1132px) / 2)) 20px 24px; }
   .fact, .fact--first { padding: 14px 16px 14px 0; border-right: none; }
   .fact--last { margin-right: 0; }
