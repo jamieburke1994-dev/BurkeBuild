@@ -130,6 +130,10 @@ h2.sec-title .thin { font-weight: 600; color: var(--muted); }
 /* ---------- tactile cards + drag tracks ---------- */
 .trackwrap { overflow: hidden; padding: 16px 0; }
 .dragtrack { display: flex; width: max-content; cursor: grab; touch-action: pan-y; user-select: none; will-change: transform; }
+.grid-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.grid-cards--4 { grid-template-columns: repeat(4, 1fr); }
+.grid-cards .tcard { width: auto; margin-right: 0; }
+.grid-cards--4 .tcard { padding: 32px 28px; }
 .tcard {
   position: relative; overflow: hidden; width: 400px; flex: none; margin-right: 24px;
   padding: 38px 34px 36px; will-change: transform;
@@ -289,6 +293,7 @@ textarea.fld { resize: vertical; margin-bottom: 22px; }
 /* ---------- responsive ---------- */
 @media (max-width: 1020px) {
   .grid-projects { grid-template-columns: repeat(2, 1fr); }
+  .grid-cards, .grid-cards--4 { grid-template-columns: repeat(2, 1fr); }
   .grid-about, .grid-contact, .grid-story { grid-template-columns: 1fr; gap: 48px; }
   .facts__grid { grid-template-columns: 1fr 1fr; padding: 12px max(24px, calc((100vw - 1132px) / 2)) 20px 24px; }
   .fact, .fact--first { padding: 14px 16px 14px 0; border-right: none; }
@@ -304,6 +309,7 @@ textarea.fld { resize: vertical; margin-bottom: 22px; }
   .hero__content { left: 24px; right: 24px; }
   .hero__rail { display: none; }
   .grid-projects { grid-template-columns: 1fr; }
+  .grid-cards, .grid-cards--4 { grid-template-columns: 1fr; }
   .values { grid-template-columns: 1fr; }
   .fld-row { grid-template-columns: 1fr; }
   .quote-form { padding: 32px 24px; }
