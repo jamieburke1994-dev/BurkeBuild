@@ -38,11 +38,14 @@ The 051 landline was removed at Jamie's request.
 ## Structure (multi-page since late July 2026)
 
 - `index.html` - homepage: full-screen hero + ticker only, no scroll, no footer
-- `services.html` (/services) - service cards + how-we-work steps
+- `services.html` (/services) - six editorial photo rows, one per service
 - `projects.html` (/projects) - filterable gallery + lightbox
 - `about.html` (/about) - family-business story + values
-- `faq.html` (/faq) - accordion + FAQPage schema
 - `contact.html` (/contact) - call/WhatsApp/email cards + quote form (mailto)
+
+The FAQ page was removed deliberately in July 2026 - enquiries are meant to
+open a conversation with the business instead. Its copy (planning permission,
+timelines, quotations, design, service area) is in git history if wanted.
 - `projects/` - two case-study pages
 - `css/styles.css`, `js/main.js` - shared styling and vanilla-JS interactions
 - `assets/` - images (.jpg in use; matching .avif kept for a future
