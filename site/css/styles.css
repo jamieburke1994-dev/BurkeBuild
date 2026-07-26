@@ -134,6 +134,9 @@ h2.sec-title .thin { font-weight: 600; color: var(--muted); }
 .grid-cards--4 { grid-template-columns: repeat(4, 1fr); }
 .grid-cards .tcard { width: auto; margin-right: 0; }
 .grid-cards--4 .tcard { padding: 32px 28px; }
+@media (max-width: 1199px) {
+  .grid-cards, .grid-cards--4 { grid-template-columns: repeat(2, 1fr); }
+}
 .tcard {
   position: relative; overflow: hidden; width: 400px; flex: none; margin-right: 24px;
   padding: 38px 34px 36px; will-change: transform;
@@ -148,12 +151,14 @@ h2.sec-title .thin { font-weight: 600; color: var(--muted); }
 .tcard p { font-size: 15.5px; line-height: 1.6; margin: 0; }
 .tcard--light p { color: var(--muted); }
 .tcard--dark p { color: var(--text-dim); }
+.tcard h3 { display: flex; align-items: flex-start; gap: 12px; }
 .tcard h3::before {
-  content: ""; flex: none; width: 28px; height: 3px;
-  background: var(--red-600);
+  content: ""; flex: none; width: 22px; height: 3px;
+  background: var(--red-600); margin-top: 0.5em;
 }
-.tcard--light h3::before { display: block; margin-bottom: 18px; }
-.tcard--dark h3 { display: flex; align-items: center; gap: 14px; font-size: 21px; }
+.tcard--light h3 { font-size: 18px; }
+.tcard--dark h3 { font-size: 21px; }
+.tglow { display: none !important; }
 
 /* ---------- projects ---------- */
 .filters { display: flex; flex-wrap: wrap; gap: 10px; }
@@ -296,7 +301,6 @@ textarea.fld { resize: vertical; margin-bottom: 22px; }
 /* ---------- responsive ---------- */
 @media (max-width: 1020px) {
   .grid-projects { grid-template-columns: repeat(2, 1fr); }
-  .grid-cards, .grid-cards--4 { grid-template-columns: repeat(2, 1fr); }
   .grid-about, .grid-contact, .grid-story { grid-template-columns: 1fr; gap: 48px; }
   .facts__grid { grid-template-columns: 1fr 1fr; padding: 12px max(24px, calc((100vw - 1132px) / 2)) 20px 24px; }
   .fact, .fact--first { padding: 14px 16px 14px 0; border-right: none; }
