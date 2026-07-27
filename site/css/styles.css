@@ -377,8 +377,10 @@ textarea.fld { resize: vertical; margin-bottom: 22px; }
   .section { padding: 72px 0; }
   .tcard { width: 320px; }
   .case-hero__content { left: 24px; right: 24px; bottom: 44px; }
-  .footer__logo .footer__mark { height: 32px; }
-  .footer__logo .footer__word { height: 21px; }
+  /* the stacked phone/email block is ~48px tall, so the logo has room to grow
+     to that without the footer getting any taller */
+  .footer__logo .footer__mark { height: 38px; }
+  .footer__logo .footer__word { height: 25px; }
 }
 
 /* ---------- service rows (editorial, alternating) ---------- */
