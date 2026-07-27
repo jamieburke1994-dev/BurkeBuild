@@ -443,6 +443,11 @@ textarea.fld { resize: vertical; margin-bottom: 22px; }
 /* ---------- no-scroll homepage ---------- */
 .home { background: var(--navy-950); }
 .home .hero { max-height: none; }
+/* the hero is exactly one viewport tall with nothing below it, so there is no
+   vertical scroll to have - kill the bounce so the page cannot move at all.
+   Scoped to the root element because overscroll-behavior only reaches the
+   viewport from html. Other pages keep normal vertical overscroll. */
+html.home { overscroll-behavior-y: none; }
 
 /* ---------- hero slideshow (homepage) ---------- */
 .hero__slide { opacity: 0; transition: opacity 1.6s ease; }
