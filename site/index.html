@@ -33,6 +33,19 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&family=Archivo+Expanded:wght@700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
+  <script>
+    /* This page never scrolls, so it has no scrollbar and is a scrollbar-width
+       wider than every other page - which pushed the right-hand nav items out of
+       line with them. Measure the scrollbar (0 where the OS uses overlay ones,
+       so this is a no-op there) and hand it to CSS before the first paint. */
+    (function () {
+      var p = document.createElement('div');
+      p.style.cssText = 'position:absolute;top:-9999px;width:100px;height:100px;overflow:scroll';
+      document.documentElement.appendChild(p);
+      document.documentElement.style.setProperty('--sbw', (p.offsetWidth - p.clientWidth) + 'px');
+      document.documentElement.removeChild(p);
+    })();
+  </script>
 </head>
 <body class="home">
   <a class="skip-link" href="#main">Skip to main content</a>

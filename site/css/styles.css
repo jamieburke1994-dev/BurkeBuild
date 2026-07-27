@@ -519,3 +519,10 @@ html.home { overscroll-behavior-y: none; }
   .footer__base { flex-direction: column; align-items: flex-start; gap: 10px; padding-top: 16px; padding-bottom: 20px; line-height: 1.4; }
   .footer__base .tag { order: -1; }
 }
+/* The homepage has no scrollbar, so its viewport is a scrollbar wider than every
+   other page and its right-aligned nav items sat that much further right. --sbw
+   is measured in the head of index.html before first paint. Desktop only: the
+   mobile nav uses a padding shorthand that this selector would otherwise outrank. */
+@media (min-width: 721px) {
+  .home .nav { padding-right: calc(48px + var(--sbw, 0px)); }
+}
