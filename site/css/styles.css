@@ -364,6 +364,18 @@ textarea.fld { resize: vertical; margin-bottom: 22px; }
   /* everything lives in the burger menu on mobile */
   .nav__links { display: none; }
   .nav__burger { display: flex; margin-left: auto; }
+  /* the nav holds the top of the screen. Two mechanisms because the markup
+     differs: page-head pages wrap the nav in a navy block of exactly its own
+     height, so sticky holds position without shifting anything. The hero pages
+     put the nav inside a fixed-height hero whose content is absolutely
+     positioned, so fixed costs no layout there - and unlike sticky it is not
+     bounded by the hero, which would let it scroll away once the hero ended. */
+  .page-head--bare { position: sticky; top: 0; z-index: 50; }
+  .case-hero .nav, .home .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 55; }
+  /* the case-study nav has to carry its own background - it scrolls off the
+     hero photo onto white body copy. The homepage never scrolls off its hero,
+     so it keeps the photo showing through. */
+  .case-hero .nav { background: var(--navy-950); }
   .hero__content { left: 24px; right: 24px; }
   .hero__rail { display: none; }
   /* same relationship as desktop: RIGHT sits on the same baseline as "From".
