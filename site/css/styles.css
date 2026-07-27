@@ -25,7 +25,16 @@
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
+/* the overscroll area - above the header, below the footer, and either side on a
+   trackpad - paints the canvas, which takes its colour from html. Navy so the
+   rubber-band reads as a continuation of the header and footer, not a white gap. */
+html {
+  scroll-behavior: smooth;
+  background: var(--navy-950);
+  /* nothing is wider than the viewport, so the sideways movement is purely the
+     touchpad rubber-band - switch that axis off. Vertical bounce stays. */
+  overscroll-behavior-x: none;
+}
 body {
   font-family: var(--font-body);
   color: var(--ink);
