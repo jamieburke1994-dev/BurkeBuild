@@ -99,13 +99,14 @@ h2.sec-title .thin { font-weight: 600; color: var(--muted); }
 .nav__burger.is-open span:nth-child(2) { opacity: 0; transform: scaleX(0.4); }
 .nav__burger.is-open span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
 
-/* dim the page behind the open menu */
+/* black out everything that isn't the menu */
 body.menu-open::after {
   content: ""; position: fixed; inset: 0; z-index: 40;
-  background: rgba(6, 11, 28, 0.66); backdrop-filter: blur(2px);
+  background: var(--navy-950);
   animation: fadein .25s ease both;
 }
-body.menu-open .nav { z-index: 60; }
+/* nav sits above the blackout and goes solid, so the hero photo can't show through */
+body.menu-open .nav { z-index: 60; background: var(--navy-950); }
 body.menu-open { overflow: hidden; }
 @keyframes fadein { from { opacity: 0; } to { opacity: 1; } }
 .mobile-menu { position: absolute; left: 0; right: 0; top: 100%; z-index: 50; display: flex; flex-direction: column; gap: 4px; padding: 12px 24px 24px; background: var(--navy-950); border-top: 1px solid var(--line-dark); }
@@ -332,8 +333,8 @@ textarea.fld { resize: vertical; margin-bottom: 22px; }
   .nav__burger { display: flex; margin-left: auto; }
   .hero__content { left: 24px; right: 24px; }
   .hero__rail { display: none; }
-  /* ghost type reads as a background wash, like desktop - not a stray label */
-  .hero__ghost { font-size: 30vw; top: auto; bottom: 90px; left: 12px; line-height: 0.82; }
+  /* ghost type reads as a big background wash behind the headline, like desktop */
+  .hero__ghost { font-size: 38vw; top: auto; bottom: 118px; left: 8px; line-height: 0.8; }
   /* case hero: photo goes full-bleed instead of a 60% strip */
   .case-hero > div[style*="width:60%"] { width: 100% !important; }
   /* facts read as one column rather than uneven halves */
@@ -425,13 +426,15 @@ textarea.fld { resize: vertical; margin-bottom: 22px; }
 .lightbox__prev { left: 12px; top: 50%; transform: translateY(-50%); }
 .lightbox__next { right: 12px; top: 50%; transform: translateY(-50%); }
 
-/* ---------- short viewports: keep the ticker above the fold ---------- */
-@media (max-height: 760px) {
+/* ---------- short viewports: keep the ticker above the fold ----------
+   Desktop/laptop only - phones are usually under 760px tall once browser
+   chrome is counted, and these tweaks are wrong for a narrow screen. */
+@media (max-height: 760px) and (min-width: 721px) {
   .hero__title { font-size: clamp(42px, 4.8vw, 60px); }
   .hero__content { bottom: 88px; }
   .hero__ghost { font-size: 9.5vw; top: 104px; }
 }
-@media (max-height: 660px) {
+@media (max-height: 660px) and (min-width: 721px) {
   .hero__title { font-size: clamp(36px, 4.4vw, 48px); margin-bottom: 16px; }
   .hero__sub { margin-bottom: 24px; }
   .hero__content { bottom: 96px; }
