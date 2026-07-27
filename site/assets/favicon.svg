@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" role="img" aria-label="BurkeBuild">
+  <defs>
+    <linearGradient id="bb" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="0" y2="400">
+      <stop offset="0" stop-color="#091D4D"/>
+      <stop offset=".5" stop-color="#0F1E4E"/>
+      <stop offset="1" stop-color="#C4192C"/>
+    </linearGradient>
+  </defs>
+  <style>
+    /* light browser chrome gets the brand mark; dark chrome gets the white
+       version used in the site header and footer */
+    .mark { fill: url(#bb); }
+    @media (prefers-color-scheme: dark) { .mark { fill: #fff; } }
+  </style>
+  <g class="mark">
+    <path d="M0 173 L63 223 L63 400 L0 400 Z"/>
+    <path d="M88 151 L150 102 L150 400 L88 400 Z"/>
+    <path d="M174 48 L234 0 L234 400 L174 400 Z"/>
+    <path d="M256 133 L317 181 L317 400 L256 400 Z"/>
+    <path d="M339 237 L400 188 L400 400 L339 400 Z"/>
+  </g>
+</svg>
