@@ -161,8 +161,12 @@
     var cards = document.querySelectorAll('.project[data-cat]');
     chips.forEach(function (chip) {
       chip.addEventListener('click', function () {
-        chips.forEach(function (c) { c.classList.remove('is-active'); });
+        chips.forEach(function (c) {
+          c.classList.remove('is-active');
+          if (c.hasAttribute('aria-pressed')) c.setAttribute('aria-pressed', 'false');
+        });
         chip.classList.add('is-active');
+        if (chip.hasAttribute('aria-pressed')) chip.setAttribute('aria-pressed', 'true');
         var f = chip.getAttribute('data-filter');
         cards.forEach(function (card) {
           card.classList.toggle('is-hidden', f !== 'all' && card.getAttribute('data-cat') !== f);

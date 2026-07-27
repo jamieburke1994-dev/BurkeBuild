@@ -186,6 +186,12 @@ body.menu-open { overflow: hidden; }
 }
 .chip:hover { border-color: rgba(255,255,255,0.55); color: #fff; }
 .chip.is-active { background: var(--red-600); color: #fff; border-color: var(--red-600); }
+
+/* filters on a light background (projects page) */
+.filters--light { margin-bottom: 36px; }
+.filters--light .chip { border-color: var(--line); color: var(--navy-900); }
+.filters--light .chip:not(.is-active):hover { border-color: var(--red-600); color: var(--red-600); }
+.filters--light .chip.is-active { background: var(--red-600); border-color: var(--red-600); color: #fff; }
 .grid-projects { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
 .project { position: relative; display: block; background: var(--navy-900); overflow: hidden; }
 .project.is-hidden { display: none; }
