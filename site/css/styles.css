@@ -141,7 +141,11 @@ body.menu-open { overflow: hidden; }
 
 /* ---------- ticker ---------- */
 .ticker { position: absolute; left: 0; right: 0; bottom: 0; z-index: 3; border-top: 1px solid rgba(255,255,255,0.14); overflow: hidden; padding: 15px 0; background: rgba(10,19,48,0.4); backdrop-filter: blur(6px); }
-.ticker__track { display: flex; gap: 36px; width: max-content; animation: marquee 30s linear infinite; font-family: var(--font-display); font-weight: 700; font-size: 13px; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,255,255,0.75); align-items: center; }
+/* spacing lives on the items, not as a flex gap: with a gap, n items have n-1
+   gaps, so translateX(-50%) lands half a gap short of the duplicate and the
+   loop visibly jumps. A trailing margin makes each copy exactly half the track. */
+.ticker__track { display: flex; width: max-content; animation: marquee 30s linear infinite; font-family: var(--font-display); font-weight: 700; font-size: 13px; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,255,255,0.75); align-items: center; }
+.ticker__track > * { margin-right: 36px; }
 .ticker__track i { width: 6px; height: 6px; background: var(--red-600); flex: none; }
 
 /* ---------- sections ---------- */
