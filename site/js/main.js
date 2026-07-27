@@ -302,9 +302,17 @@
     function setMenu(open) {
       menu.hidden = !open;
       burger.setAttribute('aria-expanded', String(open));
+      burger.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+      burger.classList.toggle('is-open', open);      // burger <-> X
+      document.body.classList.toggle('menu-open', open);  // dim the page behind
     }
     burger.addEventListener('click', function () { setMenu(menu.hidden); });
     menu.querySelectorAll('a').forEach(function (a) { a.addEventListener('click', function () { setMenu(false); }); });
+    // tapping the dimmed area closes it too
+    document.addEventListener('click', function (e) {
+      if (menu.hidden) return;
+      if (!menu.contains(e.target) && !burger.contains(e.target)) setMenu(false);
+    });
     document.addEventListener('keydown', function (e) {
       if (e.key === 'Escape' && !menu.hidden) {
         setMenu(false);

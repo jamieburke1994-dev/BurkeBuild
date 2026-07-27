@@ -90,7 +90,24 @@ h2.sec-title .thin { font-weight: 600; color: var(--muted); }
 .nav__links > a:not(.btn-red) { color: rgba(255,255,255,0.85); transition: color .15s ease; }
 .nav__links > a:not(.btn-red):hover { color: #fff; }
 .nav__burger { display: none; flex-direction: column; gap: 5px; padding: 8px; }
-.nav__burger span { width: 26px; height: 3px; background: #fff; transition: 0.2s; }
+.nav__burger span {
+  width: 26px; height: 3px; background: #fff; transform-origin: center;
+  transition: transform .3s cubic-bezier(.22,1,.36,1), opacity .18s ease;
+}
+/* burger morphs into an X */
+.nav__burger.is-open span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+.nav__burger.is-open span:nth-child(2) { opacity: 0; transform: scaleX(0.4); }
+.nav__burger.is-open span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
+/* dim the page behind the open menu */
+body.menu-open::after {
+  content: ""; position: fixed; inset: 0; z-index: 40;
+  background: rgba(6, 11, 28, 0.66); backdrop-filter: blur(2px);
+  animation: fadein .25s ease both;
+}
+body.menu-open .nav { z-index: 60; }
+body.menu-open { overflow: hidden; }
+@keyframes fadein { from { opacity: 0; } to { opacity: 1; } }
 .mobile-menu { position: absolute; left: 0; right: 0; top: 100%; z-index: 50; display: flex; flex-direction: column; gap: 4px; padding: 12px 24px 24px; background: var(--navy-950); border-top: 1px solid var(--line-dark); }
 .mobile-menu a:not(.btn-red) { font-family: var(--font-display); font-weight: 600; font-size: 18px; padding: 12px 0; border-bottom: 1px solid var(--line-dark); color: #fff; }
 .mobile-menu .btn-red { margin-top: 16px; }
@@ -309,15 +326,20 @@ textarea.fld { resize: vertical; margin-bottom: 22px; }
   .hero__ghost { font-size: 17vw; top: 140px; }
 }
 @media (max-width: 720px) {
-  .nav { padding: 20px 24px; gap: 12px; }
-  /* keep only the quote button from the desktop nav, beside the burger */
-  .nav__links { display: flex; margin-left: auto; }
-  .nav__links > a:not(.btn-red) { display: none; }
-  .nav__links .btn-red--nav { padding: 10px 15px; font-size: 13.5px; }
-  .nav__burger { display: flex; margin-left: 0; }
-  .mobile-menu .btn-red { display: none; }
+  .nav { padding: 20px 24px; }
+  /* everything lives in the burger menu on mobile */
+  .nav__links { display: none; }
+  .nav__burger { display: flex; margin-left: auto; }
   .hero__content { left: 24px; right: 24px; }
   .hero__rail { display: none; }
+  /* ghost type reads as a background wash, like desktop - not a stray label */
+  .hero__ghost { font-size: 30vw; top: auto; bottom: 90px; left: 12px; line-height: 0.82; }
+  /* case hero: photo goes full-bleed instead of a 60% strip */
+  .case-hero > div[style*="width:60%"] { width: 100% !important; }
+  /* facts read as one column rather than uneven halves */
+  .facts__grid { grid-template-columns: 1fr; padding: 8px 24px 20px; }
+  .facts__cta { justify-self: start; margin-top: 8px; }
+  .did { padding: 32px 26px; }
   .grid-projects { grid-template-columns: 1fr; }
   .grid-cards, .grid-cards--4 { grid-template-columns: 1fr; }
   .values { grid-template-columns: 1fr; }
