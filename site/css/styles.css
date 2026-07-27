@@ -99,15 +99,18 @@ h2.sec-title .thin { font-weight: 600; color: var(--muted); }
 .nav__burger.is-open span:nth-child(2) { opacity: 0; transform: scaleX(0.4); }
 .nav__burger.is-open span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
 
-/* black out everything that isn't the menu */
+/* darken everything that isn't the menu - fades in, never a hard cut */
 body.menu-open::after {
   content: ""; position: fixed; inset: 0; z-index: 40;
-  background: var(--navy-950);
-  animation: fadein .25s ease both;
+  background: rgba(6, 11, 28, 0.92);
+  animation: fadein .32s cubic-bezier(.22,1,.36,1) both;
 }
-/* nav sits above the blackout and goes solid, so the hero photo can't show through */
+/* nav sits above the dim and fades to solid, so the hero photo can't show through */
+.nav { transition: background-color .32s cubic-bezier(.22,1,.36,1); }
 body.menu-open .nav { z-index: 60; background: var(--navy-950); }
 body.menu-open { overflow: hidden; }
+.mobile-menu { animation: menuIn .32s cubic-bezier(.22,1,.36,1) both; }
+@keyframes menuIn { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: none; } }
 @keyframes fadein { from { opacity: 0; } to { opacity: 1; } }
 .mobile-menu { position: absolute; left: 0; right: 0; top: 100%; z-index: 50; display: flex; flex-direction: column; gap: 4px; padding: 12px 24px 24px; background: var(--navy-950); border-top: 1px solid var(--line-dark); }
 .mobile-menu a:not(.btn-red) { font-family: var(--font-display); font-weight: 600; font-size: 18px; padding: 12px 0; border-bottom: 1px solid var(--line-dark); color: #fff; }
@@ -340,8 +343,8 @@ textarea.fld { resize: vertical; margin-bottom: 22px; }
   .nav__burger { display: flex; margin-left: auto; }
   .hero__content { left: 24px; right: 24px; }
   .hero__rail { display: none; }
-  /* ghost type reads as a big background wash behind the headline, like desktop */
-  .hero__ghost { font-size: 38vw; top: auto; bottom: 118px; left: 8px; line-height: 0.8; }
+  /* same relationship as desktop: upper-left, bottom just meeting the headline */
+  .hero__ghost { font-size: 22vw; top: 20%; bottom: auto; left: 16px; line-height: 0.8; }
   /* case hero: photo goes full-bleed instead of a 60% strip */
   .case-hero > div[style*="width:60%"] { width: 100% !important; }
   /* facts read as one column rather than uneven halves */
