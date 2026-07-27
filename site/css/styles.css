@@ -52,6 +52,7 @@ summary::-webkit-details-marker { display: none; }
 @keyframes marquee { to { transform: translateX(-50%); } }
 @keyframes fadeup { from { opacity: 0; transform: translateY(26px); } to { opacity: 1; transform: translateY(0); } }
 @keyframes lineg { from { width: 0; } to { width: 44px; } }
+@keyframes lineg-sm { from { width: 0; } to { width: 30px; } }
 
 /* ---------- type helpers ---------- */
 .kicker {
@@ -350,8 +351,13 @@ textarea.fld { resize: vertical; margin-bottom: 22px; }
   .nav__burger { display: flex; margin-left: auto; }
   .hero__content { left: 24px; right: 24px; }
   .hero__rail { display: none; }
-  /* same relationship as desktop: upper-left, bottom just meeting the headline */
-  .hero__ghost { font-size: 22vw; top: 20%; bottom: auto; left: 16px; line-height: 0.8; }
+  /* same relationship as desktop: RIGHT sits on the same baseline as "From".
+     anchored from the bottom because the headline is bottom-anchored too - the
+     gap from hero bottom to that baseline is a constant 344px on any phone width. */
+  .hero__ghost { font-size: 22vw; top: auto; bottom: calc(344px - 0.068em); left: 16px; line-height: 0.8; }
+  /* eyebrow has to hold one line - scales with the viewport so it never wraps */
+  .hero__eyebrow { font-size: clamp(9px, 3vw, 12.5px); letter-spacing: 0.14em; gap: 10px; white-space: nowrap; }
+  .hero__eyebrow::before { width: 30px; flex: 0 0 auto; animation-name: lineg-sm; }
   /* case hero: photo goes full-bleed instead of a 60% strip */
   .case-hero > div[style*="width:60%"] { width: 100% !important; }
   /* facts read as one column rather than uneven halves */
