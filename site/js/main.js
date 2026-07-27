@@ -215,8 +215,15 @@
         get('message')
       );
       window.location.href = 'mailto:info@burkebuild.com?subject=' + subject + '&body=' + body;
+      // the confirmation line is created on submit, so it leaves no gap at rest
       var note = form.querySelector('.form-note');
-      if (note) note.textContent = 'Your email app should now open with your enquiry - just press send.';
+      if (!note) {
+        note = document.createElement('p');
+        note.className = 'form-note';
+        note.setAttribute('role', 'status');
+        form.appendChild(note);
+      }
+      note.textContent = 'Your email app should now open with your enquiry - just press send.';
     });
   }
 
