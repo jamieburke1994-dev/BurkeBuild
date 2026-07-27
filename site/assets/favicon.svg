@@ -6,13 +6,7 @@
       <stop offset="1" stop-color="#C4192C"/>
     </linearGradient>
   </defs>
-  <style>
-    /* light browser chrome gets the brand mark; dark chrome gets the white
-       version used in the site header and footer */
-    .mark { fill: url(#bb); }
-    @media (prefers-color-scheme: dark) { .mark { fill: #fff; } }
-  </style>
-  <g class="mark">
+  <g fill="url(#bb)">
     <path d="M0 173 L63 223 L63 400 L0 400 Z"/>
     <path d="M88 151 L150 102 L150 400 L88 400 Z"/>
     <path d="M174 48 L234 0 L234 400 L174 400 Z"/>
