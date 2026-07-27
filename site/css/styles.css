@@ -237,8 +237,6 @@ textarea.fld { resize: vertical; margin-bottom: 22px; }
 /* ---------- case-study pages ---------- */
 .case-hero { position: relative; height: 78svh; min-height: 600px; color: #fff; overflow: hidden; background: var(--navy-950); }
 .case-hero__content { position: absolute; left: 48px; right: 48px; bottom: 64px; z-index: 2; animation: fadeup .8s .2s both; }
-.case-crumb { display: inline-flex; align-items: center; gap: 10px; font-family: var(--font-display); font-weight: 700; font-size: 12.5px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--text-dim); margin-bottom: 20px; transition: color .15s ease; }
-.case-crumb:hover { color: #fff; }
 .case-eyebrow { display: flex; align-items: center; gap: 12px; font-family: var(--font-display); font-weight: 700; font-size: 12.5px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--red-600); margin: 0 0 16px; }
 .case-eyebrow::before { content: ""; width: 44px; height: 3px; background: var(--red-600); }
 .case-title { font-family: var(--font-display); font-weight: 900; font-size: clamp(42px, 5.5vw, 74px); line-height: 1; letter-spacing: -0.03em; margin: 0 0 18px; max-width: 900px; }
