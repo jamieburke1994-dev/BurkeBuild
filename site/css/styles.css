@@ -73,7 +73,7 @@ summary::-webkit-details-marker { display: none; }
 /* not element-qualified: the About page applies this to its h1, and an
    h2-only selector silently missed it, dropping that heading back to the
    browser default - body font, 32px, and no styling on .thin */
-.sec-title { font-family: var(--font-display); font-weight: 800; font-size: clamp(32px, 4.2vw, 50px); line-height: 1.03; letter-spacing: -0.02em; color: var(--navy-900); }
+.sec-title { font-family: var(--font-display); font-weight: 800; font-size: clamp(32px, 4.2vw, 50px); line-height: 1.03; letter-spacing: -0.02em; color: var(--navy-900); margin: 0 0 22px; }
 .sec-title .thin { font-weight: 600; color: var(--muted); }
 .on-dark .sec-title { color: #fff; }
 
@@ -420,12 +420,12 @@ textarea.fld { resize: vertical; margin-bottom: 22px; }
 .srow--flip .srow__media { order: 2; }
 .srow__media { position: relative; --f-x: 14px; --f-y: 12px; }
 .srow__media img { width: 100%; height: 430px; object-fit: cover; display: block; }
-.srow h2 {
-  font-family: var(--font-display); font-weight: 800;
-  font-size: clamp(26px, 2.9vw, 36px); line-height: 1.05; letter-spacing: -0.02em;
-  color: var(--navy-900); margin: 14px 0 16px;
-}
-.srow > div > p { font-size: 16.5px; line-height: 1.7; color: var(--muted); margin: 0 0 26px; max-width: 520px; }
+/* service row headings carry .sec-title, the same class the About heading uses,
+   so there is one definition of a page heading rather than two that drift.
+   :not(.kicker) keeps this body-copy rule off the kicker - it is a <p> too, and
+   this selector outranks .kicker, which is why the kicker was rendering grey
+   and oversized instead of small and red. */
+.srow > div > p:not(.kicker) { font-size: 16.5px; line-height: 1.7; color: var(--muted); margin: 0 0 26px; max-width: 520px; }
 .srow ul { display: grid; grid-template-columns: 1fr 1fr; gap: 12px 26px; }
 .srow li { display: flex; gap: 11px; font-size: 15px; line-height: 1.5; color: var(--navy-900); font-weight: 500; }
 .srow li::before {
