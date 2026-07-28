@@ -269,6 +269,11 @@ body.menu-open { overflow: hidden; }
 .zoomwrap:hover img { transform: scale(1.05); filter: brightness(1.1) saturate(1.05); }
 .values { display: grid; grid-template-columns: 1fr 1fr; gap: 22px 32px; }
 .value { border-left: 3px solid var(--red-600); padding-left: 16px; }
+/* credentials - the things homeowners check for. Same check mark as the service
+   bullets so it reads as part of the set rather than a badge strip bolted on. */
+.creds { display: flex; flex-wrap: wrap; gap: 12px 28px; margin-top: 34px; padding-top: 22px; border-top: 1px solid var(--line); }
+.creds li { display: flex; align-items: center; gap: 9px; font-family: var(--font-display); font-weight: 600; font-size: 12.5px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--navy-900); }
+.creds li::before { content: ""; flex: none; width: 13px; height: 13px; background: var(--red-600); clip-path: polygon(0 55%, 12% 42%, 38% 65%, 88% 0, 100% 12%, 40% 100%); }
 .value strong { display: block; font-family: var(--font-display); font-weight: 800; font-size: 16.5px; color: var(--navy-900); }
 .value span { font-size: 14px; color: var(--muted); line-height: 1.5; }
 
