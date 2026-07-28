@@ -70,9 +70,12 @@ summary::-webkit-details-marker { display: none; }
   letter-spacing: 0.14em; text-transform: uppercase; color: var(--red-600); margin-bottom: 14px;
 }
 .kicker::before { content: ""; width: 26px; height: 3px; background: var(--red-600); }
-h2.sec-title { font-family: var(--font-display); font-weight: 800; font-size: clamp(32px, 4.2vw, 50px); line-height: 1.03; letter-spacing: -0.02em; color: var(--navy-900); }
-h2.sec-title .thin { font-weight: 600; color: var(--muted); }
-.on-dark h2.sec-title { color: #fff; }
+/* not element-qualified: the About page applies this to its h1, and an
+   h2-only selector silently missed it, dropping that heading back to the
+   browser default - body font, 32px, and no styling on .thin */
+.sec-title { font-family: var(--font-display); font-weight: 800; font-size: clamp(32px, 4.2vw, 50px); line-height: 1.03; letter-spacing: -0.02em; color: var(--navy-900); }
+.sec-title .thin { font-weight: 600; color: var(--muted); }
+.on-dark .sec-title { color: #fff; }
 
 /* ---------- buttons ---------- */
 .btn-red {
