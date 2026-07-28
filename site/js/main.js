@@ -214,16 +214,44 @@
         'Project type: ' + (get('project_type') || '-') + '\n\n' +
         get('message')
       );
+      // a bot filled the hidden field: look successful, send nothing
+      if (get('company_website')) { showNote(''); return; }
       window.location.href = 'mailto:info@burkebuild.com?subject=' + subject + '&body=' + body;
-      // the confirmation line is created on submit, so it leaves no gap at rest
-      var note = form.querySelector('.form-note');
-      if (!note) {
-        note = document.createElement('p');
-        note.className = 'form-note';
-        note.setAttribute('role', 'status');
-        form.appendChild(note);
+      showNote(get('name'));
+
+      // the confirmation is created on submit, so it leaves no gap at rest. mailto
+      // does nothing at all when no mail client is set up - common on Windows and
+      // Chromebooks - so always offer a route that does not depend on one.
+      function showNote(name) {
+        var note = form.querySelector('.form-note');
+        if (!note) {
+          note = document.createElement('p');
+          note.className = 'form-note';
+          note.setAttribute('role', 'status');
+          form.appendChild(note);
+        }
+        note.textContent = '';
+        var head = document.createElement('strong');
+        head.textContent = name ? 'Thanks, ' + name.trim().split(' ')[0] + '.' : 'Thanks.';
+        note.appendChild(head);
+        note.appendChild(document.createTextNode('Your email app should now open with the enquiry ready to send.'));
+        var alt = document.createElement('span');
+        alt.className = 'form-note__alt';
+        alt.appendChild(document.createTextNode('Nothing opened? Ring '));
+        var tel = document.createElement('a');
+        tel.href = 'tel:+353868436710';
+        tel.textContent = '(+353) 86 843 6710';
+        alt.appendChild(tel);
+        alt.appendChild(document.createTextNode(' or '));
+        var wa = document.createElement('a');
+        wa.href = 'https://wa.me/353868436710';
+        wa.target = '_blank';
+        wa.rel = 'noopener';
+        wa.textContent = 'message us on WhatsApp';
+        alt.appendChild(wa);
+        alt.appendChild(document.createTextNode('.'));
+        note.appendChild(alt);
       }
-      note.textContent = 'Your email app should now open with your enquiry - just press send.';
     });
   }
 

@@ -26,6 +26,9 @@ The 051 landline was removed at Jamie's request.
 ## Still to do (needs a human)
 
 - Point burkebuild.com DNS at Vercel (site currently at burkebuild.vercel.app).
+- **Switch on Web Analytics in the Vercel project** (Project - Analytics - Enable).
+  The tag is already on every page and stays inert until that is done. It is
+  cookie-free, so it needs no cookie banner.
 - Confirm the 086 number is on WhatsApp (contact card links to wa.me).
 - Contact form opens the visitor's email app (mailto). For a real inbox form,
   add a Formspree/similar `action` and swap the handler in `js/main.js`.

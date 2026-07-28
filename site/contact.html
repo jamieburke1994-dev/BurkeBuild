@@ -15,10 +15,13 @@
   <meta property="og:title" content="Contact Us - BurkeBuild">
   <meta property="og:description" content="Free, no-obligation quotations. Call, WhatsApp or send a few details and we'll come back to you promptly.">
   <meta property="og:url" content="https://www.burkebuild.com/contact">
-  <meta property="og:image" content="https://www.burkebuild.com/assets/og-image.jpg">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&family=Archivo+Expanded:wght@700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <meta property="og:image" content="https://www.burkebuild.com/assets/og-contact.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Tiered rear garden with granite steps by BurkeBuild">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preload" href="/assets/fonts/archivo-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body>
@@ -57,6 +60,7 @@
             <a class="ccard reveal" data-tilt data-theme="light" href="mailto:info@burkebuild.com"><span class="tglow"></span><svg viewBox="0 0 24 24" style="fill:none;stroke:#1B2B66;stroke-width:2"><path d="M3 5h18v14H3zM3 6l9 7 9-7"/></svg><span><em>Email</em><strong>info@burkebuild.com</strong></span></a>
           </div>
         </div>
+        <div>
         <form class="quote-form reveal" data-quote-form>
           <h3>Get in touch</h3>
           <div class="fld-row">
@@ -78,8 +82,16 @@
             </div>
           </div>
           <textarea class="fld" name="message" placeholder="Tell us a little about the job…" rows="4" aria-label="Project details" required></textarea>
+          <!-- honeypot: off-screen and skipped by tab order, so only bots fill it in -->
+          <div class="hp" aria-hidden="true"><label>Company website<input type="text" name="company_website" tabindex="-1" autocomplete="off"></label></div>
           <button type="submit" class="btn-red btn-red--flat" data-magnetic data-shimmer data-strength="0.12" style="width:100%;padding:17px">Send enquiry</button>
         </form>
+        <p class="privacy-note reveal">
+          We use what you send here only to reply to your enquiry. We don&rsquo;t pass it to anyone else and we won&rsquo;t add you to a mailing list -
+          email <a href="mailto:info@burkebuild.com">info@burkebuild.com</a> any time to have your details deleted.
+          Our visitor statistics are cookie-free and don&rsquo;t follow you around the web.
+        </p>
+        </div>
       </div>
     </section>
   </main>
@@ -99,5 +111,7 @@
   </footer>
 
   <script src="/js/main.js"></script>
+  <!-- Vercel Web Analytics: cookie-free, no cross-site tracking. Needs Analytics switched on in the Vercel project. -->
+  <script defer src="/_vercel/insights/script.js"></script>
 </body>
 </html>
